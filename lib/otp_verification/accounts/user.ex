@@ -7,6 +7,7 @@ defmodule OTPVerification.Accounts.User do
     field :otp_last, :integer
     field :otp_secret, :string
     field :trivia, :string
+    field :email, :string
 
     timestamps()
   end
@@ -15,6 +16,6 @@ defmodule OTPVerification.Accounts.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:otp_secret, :otp_last, :name, :trivia])
-    |> validate_required([:otp_secret, :otp_last, :name, :trivia])
+    |> validate_required([:email])
   end
 end

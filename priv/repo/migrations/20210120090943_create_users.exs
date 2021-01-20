@@ -5,6 +5,7 @@ defmodule OTPVerification.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :otp_secret, :string
       add :otp_last, :integer, default: 0
+      add :email, :string
       add :name, :string
       add :trivia, :string
 
