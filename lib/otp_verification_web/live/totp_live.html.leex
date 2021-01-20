@@ -12,3 +12,18 @@
   </button>
 </form>
 <% end %>
+
+<%= if @status == "Email sent" do %>
+<%= f = form_for @changeset, "#",
+  id: "verification-form",
+  phx_submit: "verify_otp" %>
+  <fieldset>
+    <%= label f, :otp, "OTP", class: "form-label" %>
+    <%= text_input f, :otp, class: "form-control", placeholder: "Please your OTP"%>
+    <%= error_tag f, :otp %>
+  </fieldset>
+  <button type="submit">
+    Verify
+  </button>
+</form>
+<% end %>

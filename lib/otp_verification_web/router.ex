@@ -38,6 +38,7 @@ defmodule OTPVerificationWeb.Router do
 
     scope "/" do
       pipe_through :browser
+      forward "/sent_emails", Bamboo.SentEmailViewerPlug
       live_dashboard "/dashboard", metrics: OTPVerificationWeb.Telemetry
     end
   end
