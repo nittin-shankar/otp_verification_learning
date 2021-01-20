@@ -18,6 +18,7 @@ defmodule OTPVerificationWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    live "/totp", TOTPLive, :index
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,14 @@
+<%= if @status == "Email not sent" do %>
+<%= f = form_for @changeset, "#",
+  id: "validation-form",
+  phx_submit: "send_email" %>
+  <fieldset>
+    <%= label f, :email, class: "form-label" %>
+    <%= email_input f, :email, class: "form-control", placeholder: "Please put your email"%>
+    <%= error_tag f, :email %>
+  </fieldset>
+  <button type="submit">
+    Get OTP
+  </button>
+</form>
+<% end %>
